@@ -1,0 +1,67 @@
+.input-container {
+    position: relative;
+    input.input-form {
+        padding: 10px 15px;
+        font-size: 14px;
+        border-radius: 3px;
+        outline: none;
+        border: 1px solid $gray-400;
+        transition: all ease-in-out .2s;
+        
+        &:hover, &:focus {
+            border: 1px solid $primary;
+            box-shadow: 0px 0px 0px 2px lighten($color: $primary, $amount: 20);
+        }
+        
+        &:hover ~ .label-top, &:focus ~ .label-top, &:valid ~ .label-top {
+            font-size: 12px;
+            top: -8px;
+            left: 10px;
+        }
+    
+    }
+
+    label.label-top {
+        color: $gray-400;
+        font-size: 14px;
+    }
+
+    .label-top {
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        background-color: $white;
+        transition: all ease-in-out .2s;
+    }
+
+    input.checkbox-switch {
+        width: 50px;
+        height: 31px;
+        border-radius: 20px;
+        background-color: $gray-400;
+        outline: none;
+        transition: all ease-in-out .2s;
+        @include web-appereance;
+
+        &:checked {
+            background-color: $light-green;
+        }
+
+        &:checked::after {
+            left: 23px;
+            transition: all ease-in-out .2s
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 23px;
+            height: 23px;
+            background-color: white;
+            border-radius: 50%;
+            transition: all ease-in-out 0.2s;       
+        }
+    }
+}
